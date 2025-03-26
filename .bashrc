@@ -81,3 +81,14 @@ fi
 if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
+
+# Prompt generated at https://bash-prompt-generator.org/
+parse_git_branch () { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'; }
+
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; 
+PS1='\[\e[96m\]\u\[\e[0m\] \[\e[97m\]in \[\e[0m\]📂 \[\e[97m\]\w\[\e[96m\]${PS1_CMD1}\n\[\e[0m\]\$ '
+export PROMPT_DIRTRIM=4  # limited working directory prompt to 4
+. ~/.git-prompt.sh
+export GIT_PS1_SHOWCONFLICTSTATE="yes"  # show in-progress merges, bisects, etc
+export GIT_PS1_SHOWDIRTYSTATE=1  # show * on in-progress changes
+#export GIT_PS1_SHOWUPSTREAM="verbose name"

@@ -5,6 +5,9 @@ bashrc_setup() {
 	cp .bashrc ~/.bashrc
 	cp .bash_aliases ~/.bash_aliases
 	cp .bash_path ~/.bash_path
+	cp .bash_profile ~/.bash_profile
+	# for Git status autocompletion
+	curl https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 }
 
 tmux_setup() {
