@@ -16,8 +16,19 @@ tmux_setup() {
 }
 
 neovim_setup() {
-	echo "TODO: Neovim setup (installation with wget, etc)"
-	echo "Copying to ~/.config/nvim"
+	echo "TODO: Neovim nightly setup (installation with wget, etc)"
+
+	echo "Neovim Setup -- installing dependencies"
+	sudo apt install -y \
+				fuse \
+				ripgrep \
+
+	echo "Neovim Setup -- downloading patched nerdfont (JetBrainsMono)"
+	curl https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
+	echo "TODO: JetBrainsMono download complete. Extract and install in Windows."
+
+	echo "Copying existing config to ~/.config/nvim"
+	mkdir -p ~/.config/nvim
 	cp -r Neovim-Config/* ~/.config/nvim
 }
 
