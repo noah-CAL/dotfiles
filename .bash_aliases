@@ -1,7 +1,4 @@
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+#!/bin/bash
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -15,14 +12,18 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-PATH=/opt/riscv/bin:$PATH
-PATH=/home/noah/riscv/riscv-pk/build:$PATH
-PATH=/opt/Xilinx/Vivado/2024.1/bin:$PATH
-LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2024.1/lib/lnx64.o:$LD_LIBRARY_PATH
-
-export PATH="$PATH:$HOME/bin"  # for any local /bin executables
+# ls aliases
+alias ll='ls -lh'
+alias la='ls -A'
+alias lh='ls -d .*'
 
 # list automatically on directory change
 function cd {
     builtin cd "$@" && ls -F
 }
+
+# handy git aliases
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m '
+alias gca='git commit --append'
