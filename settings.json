@@ -1,5 +1,5 @@
 {
-    "_comment": "configuration file for windows terminal! mainly just added transparency, acrylic background, and nerdfont",
+    "_comment": "configuration file for windows terminal! mainly just added transparency, acrylic background, and nerdfont. Also note: do I even need this lol...",
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
