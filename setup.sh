@@ -6,7 +6,7 @@ bashrc_setup() {
 	cp .bash_aliases ~/.bash_aliases
 	cp .bash_path ~/.bash_path
 	# for Git status autocompletion
-	curl https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+	curl https://raw.githubusercontent.com/git/git/blob/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 }
 
 tmux_setup() {
@@ -31,6 +31,19 @@ neovim_setup() {
 	cp -r Neovim-Config/* ~/.config/nvim
 }
 
+fortune_setup() {
+	echo "Installing fortune, cowsay, lolcat"
+	sudo apt install -y \
+				fortune \
+				cowsay \
+				lolcat
+	echo "Installing fortunes to /usr/share/games/fortunes/fortune-cookies.data"
+	curl https://raw.githubusercontent.com/reggi/fortune-cookie/refs/heads/master/fortune-cookies.txt > fortune-cookies.txt
+	sed 'a%' fortune-cookies.txt > formatted-cookies
+	sudo mv formatted-cookies /usr/share/games/fortunes/fortune-cookies
+	sudo strfile /usr/share/games/fortunes/fortune-cookies /usr/share/games/fortunes/fortune-cookies.dat
+}
+
 HOME="/home/noah/dotfiles"
 
 if [[ $(pwd) != $HOME ]]; then
@@ -43,5 +56,6 @@ fi
 bashrc_setup()
 tmux_setup()
 neovim_setup()
+fortune_setup
 
 echo "TODO: copy settings.json to WSL2"

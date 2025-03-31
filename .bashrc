@@ -92,3 +92,6 @@ export PROMPT_DIRTRIM=4  # limited working directory prompt to 4
 export GIT_PS1_SHOWCONFLICTSTATE="yes"  # show in-progress merges, bisects, etc
 export GIT_PS1_SHOWDIRTYSTATE=1  # show * on in-progress changes
 #export GIT_PS1_SHOWUPSTREAM="verbose name"
+
+WELCOME_MSG="Hi $USER!"
+echo $WELCOME_MSG $(fortune fortune-cookies) | cowsay | lolcat
