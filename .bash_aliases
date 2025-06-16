@@ -27,3 +27,10 @@ alias gs='git status'
 alias ga='git add .'
 alias gc='git commit -m '
 alias gca='git commit --append'
+alias gb='git branch'
+
+# Vivado
+vivado_DIR=/opt/Xilinx/Vivado/2024.2/bin
+if [ -d $vivado_DIR ]; then
+	alias vivado-help="echo 'Available commands in $vivado_DIR are: ' ; ls $vivado_DIR"
+fi

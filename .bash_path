@@ -5,8 +5,8 @@ if [ -f /opt/riscv ]; then
 fi
 
 if [ -f /opt/Xilinx ]; then
-	PATH=/opt/Xilinx/Vivado/2024.1/bin:$PATH
-	LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2024.1/lib/lnx64.o:$LD_LIBRARY_PATH
+	PATH=/opt/Xilinx/Vivado/2024.2/bin:$PATH
+	# LD_LIBRARY_PATH=/opt/Xilinx/Vivado/2024.2/lib/lnx64.o:$LD_LIBRARY_PATH
 fi
 
 export PATH="$PATH:$HOME/bin"  # for any local "~/bin" executables
