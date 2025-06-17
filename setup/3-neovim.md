@@ -8,6 +8,7 @@ sudo apt install -y \
     ripgrep \   # Telescope.nvim
     python3 \
     python3.11-venv  \ # for Plugin dependencies
+    npm     \   # some plugins
 ```
 
 ## 2. Install Neovim Nightly app image
